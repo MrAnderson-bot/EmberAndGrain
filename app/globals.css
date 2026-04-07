@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #2D5F3E;
+  --color-secondary: #6B4226;
+  --color-cta: #C4613A;
+  --color-bg: #F7F3ED;
+  --color-card: #FFFFFF;
+  --color-text: #2C1810;
+  --color-muted: #8B7D6B;
+  --color-border: #E8E0D4;
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+}
+
+body {
+  background-color: #F7F3ED;
+  color: #2C1810;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+::selection {
+  background-color: #2D5F3E;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #C4613A;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  box-shadow: 0 10px 15px -3px rgb(196 97 58 / 0.2);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #B5542F;
+}
+
+.btn-outline {
+  border: 2px solid rgb(255 255 255 / 0.6);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.btn-outline-green {
+  border: 2px solid #2D5F3E;
+  color: #2D5F3E;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.btn-outline-green:hover {
+  background-color: #2D5F3E;
+  color: #ffffff;
+}
