@@ -1,39 +1,92 @@
 import Image from "next/image";
 import { galleryImages } from "@/lib/data";
 
-// Alternate between portrait and landscape to create masonry variety
-const imageSizes = [
-  { width: 600, height: 400 },
-  { width: 600, height: 800 },
-  { width: 600, height: 400 },
-  { width: 600, height: 800 },
-  { width: 600, height: 400 },
-  { width: 600, height: 800 },
-  { width: 600, height: 400 },
-  { width: 600, height: 400 },
-];
-
 export function GalleryGrid() {
   return (
-    <div className="columns-1 sm:columns-2 md:columns-3 gap-4">
-      {galleryImages.map((image, index) => {
-        const dims = imageSizes[index % imageSizes.length];
-        return (
-          <div
-            key={image.src}
-            className="break-inside-avoid mb-4 rounded-2xl overflow-hidden group cursor-pointer"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={dims.width}
-              height={dims.height}
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          </div>
-        );
-      })}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {/* Row 1: large feature + 2 stacked */}
+      <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[0].src}
+          alt={galleryImages[0].alt}
+          width={800}
+          height={800}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[1].src}
+          alt={galleryImages[1].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[2].src}
+          alt={galleryImages[2].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[3].src}
+          alt={galleryImages[3].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[4].src}
+          alt={galleryImages[4].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+
+      {/* Row 2: 2 regular + large feature */}
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[5].src}
+          alt={galleryImages[5].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+      <div className="rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[6].src}
+          alt={galleryImages[6].alt}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+      <div className="col-span-2 rounded-2xl overflow-hidden group cursor-pointer">
+        <Image
+          src={galleryImages[7].src}
+          alt={galleryImages[7].alt}
+          width={800}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
     </div>
   );
 }

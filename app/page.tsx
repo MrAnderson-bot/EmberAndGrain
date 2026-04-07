@@ -237,7 +237,7 @@ export default function Home() {
                 </p>
               </address>
 
-              <div className="flex flex-col sm:flex-row gap-3 mt-8">
+              <div className="flex flex-wrap items-center gap-3 mt-8">
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(
                     `${business.address}, ${business.suburb} ${business.state} ${business.postcode}`
@@ -252,10 +252,10 @@ export default function Home() {
                   href={business.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline inline-flex items-center justify-center gap-2"
+                  className="btn-outline inline-flex items-center gap-2"
                 >
-                  <Instagram size={15} />
-                  Instagram
+                  <Instagram size={16} />
+                  <span>Instagram</span>
                 </a>
               </div>
             </div>
