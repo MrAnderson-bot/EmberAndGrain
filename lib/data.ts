@@ -6,7 +6,7 @@ export const business = {
   phone: "+61 400 000 000",
   phoneDisplay: "0400 000 000",
   email: "hello@emberandgrain.com.au",
-  address: "42 Wallace Street",
+  address: "12 Main Street",
   suburb: "Braidwood",
   state: "NSW",
   postcode: "2622",
